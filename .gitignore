@@ -18,3 +18,5 @@ venv/
 
 # But NOT the ones in models/
 !model/*.pkl
+
+anaconda_projects/

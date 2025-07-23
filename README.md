@@ -1,7 +1,7 @@
 # half_marathon
 
 
-# 🏃‍♂️ Half Marathon Finish Time Predictor
+# Half Marathon Finish Time Predictor
 
 This project builds a regression-based model to predict half marathon finish times using training history and personal best times. It includes detailed exploratory data analysis (EDA), model evaluation, and a small web application using Streamlit.
 
@@ -9,14 +9,15 @@ This project builds a regression-based model to predict half marathon finish tim
 
 ## 📌 Overview
 
-- Predicts finish times based on features like training volume, 5K personal best, and sex.
+- Predicts finish times based on 4 different features: total training volume until the race day, mileage during the last 4 month before the race, 5 Kilometer personal best record, and sex.
+
 - Implements and compares multiple regression models:
-  - Linear Regression
+  - Simple Linear Regression
   - Ridge Regression
   - Lasso Regression
+  - Random Forest
   
-- Built for data science portfolio purposes.
-- Provides a Streamlit app for users to test the model.
+- This is built for data science portfolio purposes and provides a Streamlit app for users to test the model with their personal data.
 
 ---
 
@@ -31,8 +32,8 @@ This project builds a regression-based model to predict half marathon finish tim
 
 ```bash
 half_marathon/
-├── data/                  # Raw and preprocessed data
-├── notebooks/             # Jupyter notebooks containing EDA, modeling, comparisons, etc.,
+├── data/                  # Raw and preprocessed data (to train the random forest model)
+├── notebooks/             # Jupyter notebooks containing EDA, models, plots, comparisons, etc.,
 ├── models/                # Saved .pkl regression models and scalers
 ├── src/                   # Python scripts (i.e., prediction function)
 ├── app/                   # Streamlit web app
@@ -52,7 +53,7 @@ git clone https://github.com/abedhadipour/half_marathon.git
 cd half_marathon
 ```
 
-2. **Create a virtual environment (optional but recommended)**
+2. **Create a virtual environment (optional)**
 
 ```bash
 python -m venv env
@@ -105,17 +106,19 @@ streamlit run streamlit_app.py
 
 ## 📊 Data
 
-The data includes around 2,300 entries 123 of which include information both regarding the race day and history of the racer such as:
+The data includes around 2,300 entries, 123 of which include information both regarding the race day and history of the racer such as:
 
-- Total yearly kilometers
-- Recent 5K race times
-- Sex
+- Total kilometers covered during running career and the last 4 months before the race
+- 5K and 10K personal best record times
+- Race data such as Sex, race finish time, country of origin, etc.
 
 ---
 
 ## 🤖 Models
 
-All models were evaluated with R², adjusted R², and 5-fold cross-validation. Ridge and Lasso showed slightly better generalization but only marginal gains over standard Linear Regression.
+All models were evaluated with R², adjusted R², and 5-fold cross-validation. Ridge and Lasso showed slightly better generalization but only marginal gains over standard Linear Regression. The Random Forest Regressor achieved slightly higher R² scores across training, test, and cross-validation sets, its mean absolute percentage error (MAPE) was higher than that of the simpler Linear Regression model.
+
+Given the close performance and the added benefit of interpretability and simplicity, the final prediction function was built using ordinary least squares Linear Regression. The Random Forest results are included for comparison and to demonstrate further model exploration. 
 
 Final model is saved under `models/regression_model.pkl`.
 
@@ -123,7 +126,7 @@ Final model is saved under `models/regression_model.pkl`.
 
 ## 🌐 Web App
 
-A basic Streamlit interface allows users to input their race and training data and receive a predicted finish time. Try it locally with:
+A basic Streamlit interface allows users to input their data and receive a predicted finish time. Try it locally with:
 
 ```bash
 streamlit run streamlit_app.py
