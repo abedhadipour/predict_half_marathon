@@ -135,6 +135,10 @@ A basic Streamlit interface allows users to input their data and receive a predi
 streamlit run streamlit_app.py
 ```
 
+or using the following link:
+
+https://predicthalfmarathon-8ufp2cmcqmrexgtdgqcmgj.streamlit.app/
+
 ---
 
 ## 📦 Requirements
