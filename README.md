@@ -23,7 +23,10 @@ This project builds a regression-based model to predict half marathon finish tim
 
 ## 🚀 Demo
 
-<img width="730" height="676" alt="image" src="https://github.com/user-attachments/assets/b68923e1-2e16-4099-a446-cabfa45d394e" />
+
+Please click on the link below to use the application to predict your half-marathon performance:
+
+https://predicthalfmarathon-8ufp2cmcqmrexgtdgqcmgj.streamlit.app/
 
 
 ---
