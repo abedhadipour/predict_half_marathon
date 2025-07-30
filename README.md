@@ -156,6 +156,17 @@ joblib
 
 ---
 
+## Limitations
+
+```txt
+
+This is indeed a beginner level peek into the question of performance prediction in the context of (half)marathon considering the size of the sample and the range of the methods used. Here are some of the limitations some of which may be slowly addressed in the commits to come:
+ - The sample size is definitely small. Looking only at the profiles of ~120 individuals cannot produce highly reliable indices for performance prediction.
+ - The sample is not representative. The absolute majority of the included athletes are of Italian nationality and due to the local very lik
+
+---
+
+
 ## 📝 License
 
 This project is licensed under the [MIT License](LICENSE).
