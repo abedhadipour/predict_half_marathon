@@ -158,13 +158,26 @@ joblib
 
 ## Limitations
 
-```txt
+
 
 This is indeed a beginner level peek into the question of performance prediction in the context of (half)marathon considering the size of the sample and the range of the methods used. Here are some of the limitations some of which may be slowly addressed in the commits to come:
- - The sample size is definitely small. Looking only at the profiles of ~120 individuals cannot produce highly reliable indices for performance prediction.
- - The sample is not representative. The absolute majority of the included athletes are of Italian nationality and due to the local very lik
 
----
+ - The sample size is definitely small. Looking only at the profiles of ~120 individuals cannot produce highly reliable indices for performance prediction.
+
+ - The sample is not representative. The absolute majority of the included athletes are of Italian nationality and due to the very likely highly local participation, the majority of those may be of the origins or residents of the Veneto region. These are issues to deal with when conducting an analysis to then be able to generalize its findings.
+
+ - The potential regressors that were available for the current analysis were of course limited. Potentially significant variables that were not available to us in the current analysis included but are not limited to:
+
+	- VO2Max (Measured in milliliters of O2 per Kg of body weight per minute, which simply put, captures the ability of the body to efficiently consume Oxygen)
+ 
+	- The spread of the running activity during the running career of the individual. Here we only got two variables that shows how prior activity before the race, i.e., the last 4 months and the total km. However, it may be the case that some person ran 1000 km 3 years ago and covered very little thereafter. This can be problematic as you certainly want to be able to track the carry-over effect and one needs to take that in consideration. In a nutshell, the trend is important.
+	
+	- Heart rate and heart rate variability before, during, and after preparation runs could act as a significant predictor of race performance. These data were not available for this analysis but may provide a great insight about the cardiovascular capacity of the runner and much they can push for a personal best on the race day.  
+
+ 	- Elevation gain is another factor that may provide insight about the race day performance. How much hill work a runner does and in general the type and variety of exercises they engage in to prepare themselves for the race may be insightful.
+ 
+
+
 
 
 ## 📝 License
